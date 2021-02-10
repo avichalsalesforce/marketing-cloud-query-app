@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "loginpage.html",
-  "scripts" : { 
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-    
- },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/avichalsalesforce/marketing-cloud-query-app.git"
@@ -16,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/avichalsalesforce/marketing-cloud-query-app/issues"
   },
-  "homepage": "https://github.com/avichalsalesforce/marketing-cloud-query-app#readme"
+  "homepage": "https://github.com/avichalsalesforce/marketing-cloud-query-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
