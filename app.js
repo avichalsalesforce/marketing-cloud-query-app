@@ -1,13 +1,14 @@
 // create an express app
 const express = require("express")
 const app = express()
+const path = require('path');
 
 // use the express-static middleware
 app.use(express.static("marketing-cloud-query-app"))
 
 // define the first route
 app.get("/", function (req, res) {
-  res.send(loginpage.html)
+    res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
 
 // start the server listening for requests
