@@ -3,11 +3,11 @@ const express = require("express")
 const app = express()
 
 // use the express-static middleware
-app.use(express.static("public"))
+app.use(express.static("marketing-cloud-query-app"))
 
 // define the first route
 app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>")
+  res.send("loginpage.html")
 })
 
 // start the server listening for requests
