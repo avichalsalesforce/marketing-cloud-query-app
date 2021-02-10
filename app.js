@@ -7,7 +7,7 @@ app.use(express.static("marketing-cloud-query-app"))
 
 // define the first route
 app.get("/", function (req, res) {
-  res.send("loginpage.html")
+  res.send(loginpage.html)
 })
 
 // start the server listening for requests
