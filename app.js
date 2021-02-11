@@ -12,6 +12,7 @@ app.get("/", function (req, res) {
 })
 app.post("/secondpage", function (req, res) {
   // res.sendFile(path.join(__dirname + '/secondpage.html'));
+  console.log(req.body);
    const clientidSource = req.body.clientid;
    const clientsecretSource = req.body.clientsecret;
    const clinentauthurl= req.body.authurl;
