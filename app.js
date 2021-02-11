@@ -11,7 +11,7 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
 app.get('/loginpage.html', function(req, res){ 
-    res.send(path.join(__dirname + '/secondpage.html')); 
+    res.send(path.join('/secondpage.html')); 
 });
 
 // start the server listening for requests
