@@ -22,7 +22,7 @@ app.post("/secondpage", function (req, res) {
    var clinentauthurl= req.body.authurl;
    console.log('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
    //alert('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
-   res.sendFile(path.join(__dirname + '/secondpage.html'));
+  // res.sendFile(path.join(__dirname + '/secondpage.html'));
 
 });
 
