@@ -11,12 +11,13 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
 app.post("/secondpage.html", function (req, res) {
-  // res.sendFile(path.join(__dirname + '/secondpage.html'));
-   const clientidSource = req.body.clientid;
+   res.sendFile(path.join(__dirname + '/secondpage.html'));
+  /* const clientidSource = req.body.clientid;
    const clientsecretSource = req.body.clientsecret;
    const clinentauthurl= req.body.authurl;
    console.log('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
    alert('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
+   */
 })
 
 
