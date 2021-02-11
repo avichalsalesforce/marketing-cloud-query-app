@@ -43,7 +43,7 @@ try {
        var accessToken = tokenObj.access_token;
        Write("OAuth 2.0 Access Token: " + accessToken);
 } catch(e) {
-      Write(Stringify(e));
+     // Write(Stringify(e));
  }
    
 
