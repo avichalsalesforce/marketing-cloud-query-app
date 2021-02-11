@@ -10,10 +10,8 @@ app.use(express.static("marketing-cloud-query-app"))
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
-app.get('/secondpage', (req, res) => {
-    res.sendFile('secondpage.html', {
-        root: path.join(__dirname, './')
-    })
+app.get("/submit", function (req, res) {
+    res.sendFile(path.join(__dirname + '/secondpage.html'));
 })
 
 
