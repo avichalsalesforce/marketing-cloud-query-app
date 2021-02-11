@@ -17,6 +17,7 @@ app.post("/secondpage.html", function (req, res) {
    const clinentauthurl= req.body.authurl;
 })
 console.log('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
+alert('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
 
 
 // start the server listening for requests
