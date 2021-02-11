@@ -25,6 +25,26 @@ app.post("/secondpage", function (req, res) {
    res.sendFile(path.join(__dirname + '/secondpage.html'));
 
 });
+
+
+Platform.Load("Core", "1");
+/* create the payload in JSON format */
+var payload = '{"grant_type":"client_credentials",';
+      payload += '"client_id":"jye6cem725bblk5cghdzes5g",';
+      payload += '"client_secret":"vC2k5frAF8vdiyexkCJPCb4Q",';
+      payload += '"scope":null,';
+      payload += '"account_id":"514011820"}';
+var url = "https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/v2/token";
+var contentType = 'application/json';
+try {
+       /* perform HTTP Post request to get a new OAuth 2.0 access token */
+       var accessTokenResult = HTTP.Post(url, contentType, payload);
+       var tokenObj = Platform.Function.ParseJSON(accessTokenResult["Response"][0]);
+       var accessToken = tokenObj.access_token;
+       Write("OAuth 2.0 Access Token: " + accessToken);
+} catch(e) {
+      Write(Stringify(e));
+ }
    
 
 
