@@ -10,9 +10,13 @@ app.use(express.static("marketing-cloud-query-app"))
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
-app.get("/secondpage.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/secondpage.html'));
+app.post("/secondpage.html", function (req, res) {
+   // res.sendFile(path.join(__dirname + '/secondpage.html'));
+   const clientidSource = req.body.clientid;
+   const clientsecretSource = req.body.clientsecret;
+   const clinentauthurl= req.body.authurl;
 })
+console.log('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
 
 
 // start the server listening for requests
