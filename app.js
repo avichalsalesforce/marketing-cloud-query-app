@@ -9,6 +9,7 @@ app.use(express.static("marketing-cloud-query-app"))
 // define the first route
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
+    res.sendFile(path.join(__dirname + '/secondpage.html'));
 })
 
 // start the server listening for requests
