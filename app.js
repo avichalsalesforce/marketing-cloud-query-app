@@ -10,7 +10,7 @@ app.use(express.static("marketing-cloud-query-app"))
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
-app.get("/submit", function (req, res) {
+app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/secondpage.html'));
 })
 
