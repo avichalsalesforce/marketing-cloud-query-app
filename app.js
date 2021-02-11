@@ -41,9 +41,11 @@ try {
        var accessTokenResult = HTTP.Post(url, contentType, payload);
        var tokenObj = Platform.Function.ParseJSON(accessTokenResult["Response"][0]);
        var accessToken = tokenObj.access_token;
-       Write("OAuth 2.0 Access Token: " + accessToken);
+       console.log("OAuth 2.0 Access Token: " + accessToken);
+      // Write("OAuth 2.0 Access Token: " + accessToken);
 } catch(e) {
-     // Write(Stringify(e));
+      //Write(Stringify(e));
+      console.log(Stringify(e));
  }
    
 
