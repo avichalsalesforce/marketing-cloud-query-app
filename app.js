@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
+app.set('view engine', 'html');
 app.post("/secondpage", function (req, res) {
   // res.sendFile(path.join(__dirname + '/secondpage.html'));
   console.log(req);
