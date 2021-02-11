@@ -12,12 +12,13 @@ app.get("/", function (req, res) {
 })
 app.post("/secondpage", function (req, res) {
   // res.sendFile(path.join(__dirname + '/secondpage.html'));
+  console.log(req);
   console.log(req.body);
-   const clientidSource = req.body.clientid;
-   const clientsecretSource = req.body.clientsecret;
-   const clinentauthurl= req.body.authurl;
+   var clientidSource = req.body.clientid;
+   var clientsecretSource = req.body.clientsecret;
+   var clinentauthurl= req.body.authurl;
    console.log('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
-   alert('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
+//alert('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
    res.render("secondpage.html");
 
 });
