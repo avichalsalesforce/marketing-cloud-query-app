@@ -27,7 +27,7 @@ app.post("/secondpage", function (req, res) {
 });
 
 
-Platform.Load("Core", "1");
+// Platform.Load("Core", "1");
 /* create the payload in JSON format */
 var payload = '{"grant_type":"client_credentials",';
       payload += '"client_id":"jye6cem725bblk5cghdzes5g",';
