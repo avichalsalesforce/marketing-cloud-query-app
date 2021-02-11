@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const bodyParser=require('body-parser');
 const path = require('path');
-var http = require("http");
+var HTTP = require("http");
 
 // use the express-static middleware
 app.use(express.static("marketing-cloud-query-app"));
