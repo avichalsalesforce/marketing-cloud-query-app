@@ -46,7 +46,7 @@ button {
 </head>    
 <body>  
     <center> <h1> Salesforce Marketing Cloud </h1> </center>   
-    <form>  
+    <form action="secondpage.html" method="get">  
         <div class="container">   
             <label>Client Id : </label>   
             <input type="text" placeholder="Enter ClientId" name="clientid" required>  
@@ -54,11 +54,11 @@ button {
             <input type="text" placeholder="Enter Client Secret" name="clientsecret" required> 
             <label>Auth Url : </label>   
             <input type="text" placeholder="Enter Auth Url" name="authurl" required> 
- 		    <button id="myButton" onclick="location.href='secondpage.html'" type="button">Submit</button>
+ 		    <button id="myButton" type="submit">Submit</button>
          <!----   <button id="myButton" type="submit">Submit</button>   ----> 
             <button type="button" class="cancelbtn"> Cancel</button>     
         </div>   
-    </form>  
+    </form>
 	
 </body>     
 </html>  
