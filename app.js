@@ -11,7 +11,7 @@ app.use(express.static("marketing-cloud-query-app"))
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/loginpage.html'));
 })
-router.get('/secondpage',function(req,res){
+router.get('/secondpage.html',function(req,res){
     res.sendFile(path.join(__dirname+'/secondpage.html'));
   });
 
