@@ -45,7 +45,7 @@ try {
       // Write("OAuth 2.0 Access Token: " + accessToken);
 } catch(e) {
       //Write(Stringify(e));
-      //console.log(Stringify(e));
+      console.log(JSON.Stringify(e));
  }
    
 
