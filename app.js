@@ -31,12 +31,13 @@ app.post("/secondpage", function (req, res) {
       "account_id":"514011820"  
        }
      axios({
+      headers:{
+         'Content-Type': 'application/json',
+       },
        method:'post',
        url:"https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/v2/token",
-       data: conData,
-       headers:{
-         'Content-Type': 'application/json',
-       }
+       data: conData
+      
      })
        .then(function(response) {
           console.log(response);
