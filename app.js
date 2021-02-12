@@ -4,6 +4,7 @@ const app = express();
 const bodyParser=require('body-parser');
 const path = require('path');
 var HTTP = require("http");
+const axios = require('axios');
 
 // use the express-static middleware
 app.use(express.static("marketing-cloud-query-app"));
