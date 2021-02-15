@@ -64,7 +64,8 @@ app.post("/secondpage", function (req, res) {
   
   axios(config1)
   .then(function (response1) {
-    console.log(JSON.stringify(response1.data));
+   // console.log(JSON.stringify(response1.data));
+    console.log(response1.data);
   })
   .catch(function (error) {
     console.log(error);
