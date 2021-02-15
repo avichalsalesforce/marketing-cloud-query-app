@@ -25,21 +25,20 @@ app.post("/secondpage", function (req, res) {
    console.log('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
    //alert('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
    
-       var data = {
-        "grant_type": "client_credentials",
-        "scope": "none",
-        "client_id": "jye6cem725bblk5cghdzes5g",
-        "client_secret": "vC2k5frAF8vdiyexkCJPCb4Q"
-        };
-        var url = "https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/v2/token";
-          return axios.post(url, data)
-            .then(function(response){
-                console.log(response.data)
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
- 
+   var reqData = "grant_type=client_credentials&client_id=jye6cem725bblk5cghdzes5g&client_secret=vC2k5frAF8vdiyexkCJPCb4Q";
+   axios({
+method: 'post',
+url: 'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/v2/token',
+  data: (reqData),   
+
+headers: { 
+"Content-Type": "application/json",
+}
+}).then((response) =>{
+      console.log(response)
+  }).catch((error) =>{
+      console.log(error);
+  })
 
 
 
