@@ -27,7 +27,7 @@ app.post("/secondpage", function (req, res) {
    
        var data = {
         "grant_type": "client_credentials",
-        "scope": "public",
+        "scope": "none",
         "client_id": "jye6cem725bblk5cghdzes5g",
         "client_secret": "vC2k5frAF8vdiyexkCJPCb4Q"
         };
