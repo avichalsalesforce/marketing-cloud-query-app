@@ -53,16 +53,14 @@ app.post("/secondpage", function (req, res) {
    });
 
 
-   res.sendFile(path.join(__dirname + '/secondpage.html'));
+   //res.sendFile(path.join(__dirname + '/secondpage.html'));
 
 });
 
 
 
 
-// start the server listening for requests
-app.listen(process.env.PORT || 3000, 
-	() => console.log("Server is running."));
+
 
 
 
@@ -87,4 +85,11 @@ app.listen(process.env.PORT || 3000,
   .catch(function (error) {
     console.log(error);
   });
+
+
+
+
+  // start the server listening for requests
+app.listen(process.env.PORT || 3000, 
+	() => console.log("Server is running."));
   
