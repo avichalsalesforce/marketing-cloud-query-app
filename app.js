@@ -44,7 +44,9 @@ app.post("/secondpage", function (req, res) {
    
    axios(config)
    .then(function (response) {
-     console.log(JSON.stringify(response.data));
+    // console.log(JSON.stringify(response.data));
+     var token=response.data.access_token;
+     console.log(token);
    })
    .catch(function (error) {
      console.log(error);
@@ -56,30 +58,33 @@ app.post("/secondpage", function (req, res) {
 });
 
 
-// Platform.Load("Core", "1");
-/* create the payload in JSON format */
-/* var payload = '{"grant_type":"client_credentials",';
-payload += '"client_id":"jye6cem725bblk5cghdzes5g",';
-payload += '"client_secret":"vC2k5frAF8vdiyexkCJPCb4Q",';
-payload += '"scope":null,';
-payload += '"account_id":"514011820"}';
-var url = "https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/v2/token";
-var contentType = 'application/json';
-try {
- var accessTokenResult = HTTP.Post(url, contentType, payload);
- var tokenObj = Platform.Function.ParseJSON(accessTokenResult["Response"][0]);
- var accessToken = tokenObj.access_token;
- console.log("OAuth 2.0 Access Token: " + accessToken);
-// Write("OAuth 2.0 Access Token: " + accessToken);
-} catch(e) {
-//Write(Stringify(e));
-console.log(e);
-} */
-
-   
-
 
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
 	() => console.log("Server is running."));
+
+
+
+
+  
+  var data1 = '<?xml version="1.0" encoding="UTF-8"?>\r\n<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r\n    <s:Header>\r\n        <a:Action s:mustUnderstand="1">Retrieve</a:Action>\r\n        <a:To s:mustUnderstand="1">https://mc6vgk-sxj9p08pqwxqz9hw9-4my.soap.marketingcloudapis.com/Service.asmx</a:To>\r\n        <fueloauth xmlns="http://exacttarget.com">eyJhbGciOiJIUzI1NiIsImtpZCI6IjEiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiJZeUZCUHNkZkttZzNQVHhaeFFIamlXdW8iLCJjbGllbnRfaWQiOiJqeWU2Y2VtNzI1YmJsazVjZ2hkemVzNWciLCJlaWQiOjExMDAwNTY5MCwic3RhY2tfa2V5IjoiUzExIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciJ9.pkvkKcwyZsEnkUlFVCYVpNZ4oyU_MUiOyrXVoXgHBmo.uE4VQfKaf12-zt1HtvgEduVfEo43D20YSUVz_nNZKBVS0R2lKb8cS9yVnqpLel5rJrmNBmlaDqnh_fetJoDqZKbH9eXaXkwmQ8axonDCzM7mCNe5zCGr98J0wyzHbiVbqjkEg4V5kMhsZ8OiqGw5HjApxh2pMJiEHP0iZpogX9ShVfc2vkl</fueloauth>\r\n    </s:Header>\r\n    <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">\r\n        <RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI">\r\n            <RetrieveRequest>\r\n                <ObjectType>DataExtension</ObjectType>\r\n                <Properties>ObjectID</Properties>\r\n                <Properties>CustomerKey</Properties>\r\n                <Properties>Name</Properties>\r\n                <Properties>IsSendable</Properties>\r\n                <Properties>SendableSubscriberField.Name</Properties>\r\n               \r\n            </RetrieveRequest>\r\n        </RetrieveRequestMsg>\r\n    </s:Body>\r\n</s:Envelope>';
+  
+  var config = {
+    method: 'post',
+    url: 'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.soap.marketingcloudapis.com/Service.asmx',
+    headers: { 
+      'Content-Type': 'text/xml', 
+      'SoapAction': 'Retrieve'
+    },
+    data : data1
+  };
+  
+  axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
