@@ -28,13 +28,13 @@ app.post("/secondpage", function (req, res) {
    var FormData = require('form-data');
    var data = new FormData();
    data.append('grant_type', 'client_credentials');
-   data.append('client_id', 'jye6cem725bblk5cghdzes5g');
-   data.append('client_secret', 'vC2k5frAF8vdiyexkCJPCb4Q');
-   data.append('account_id', '514011820');
+   data.append('client_id', clientidSource);
+   data.append('client_secret', clientsecretSource);
+   // data.append('account_id', '514011820');
    
    var config = {
      method: 'post',
-     url: 'https://mc6vgk-sxj9p08pqwxqz9hw9-4my.auth.marketingcloudapis.com/v2/token',
+     url: clinentauthurl,
      headers: { 
        'Content-Type': 'application/json', 
        ...data.getHeaders()
@@ -50,7 +50,7 @@ app.post("/secondpage", function (req, res) {
      console.log(error);
    });
 
-   
+
    res.sendFile(path.join(__dirname + '/secondpage.html'));
 
 });
