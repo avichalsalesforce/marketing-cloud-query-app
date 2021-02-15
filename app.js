@@ -25,30 +25,20 @@ app.post("/secondpage", function (req, res) {
    console.log('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
    //alert('Avi'+ clientidSource,'Avi1'+ clientsecretSource,'Avi2'+ clinentauthurl);
    
-   var conData = {
-      'clientId': 'jye6cem725bblk5cghdzes5g',
-      'clientSecret': 'vC2k5frAF8vdiyexkCJPCb4Q',
-      "account_id":"514011820"  
-       }
-     axios({
-      headers:{
-         'Content-Type': 'application/json',
-       },
-       method:'post',
-       url:"https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/v2/token",
-       data: conData
-      
-     })
-       .then(function(response) {
-          console.log(response);
-             res.send('Authorization Sent');
-             token = response.data.accessToken;
-             console.log(response);
-          
-     }).catch(function (error) {
-         console.log(error);
-         res.send(error);
-       });
+       var data = {
+        "grant_type": "client_credentials",
+        "scope": "public",
+        "client_id": "jye6cem725bblk5cghdzes5g",
+        "client_secret": "vC2k5frAF8vdiyexkCJPCb4Q"
+        };
+        var url = "https://mc6vgk-sxj9p08pqwxqz9hw9-4my.rest.marketingcloudapis.com/v2/token";
+          return axios.post(url, data)
+            .then(function(response){
+                console.log(response.data)
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
  
 
 
