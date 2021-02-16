@@ -45,7 +45,7 @@ app.post("/secondpage", function (req, res) {
    .then(function (response) {
     // console.log(JSON.stringify(response.data));
     token=response.data.access_token;
-    //console.log(token);
+    console.log(token);
    })
    .catch(function (error) {
      console.log(error);
@@ -64,8 +64,8 @@ app.post("/secondpage", function (req, res) {
      body:body1 
     
    };
-   console.log("Token "+ token);
-   console.log("Debody "+ body1);
+   console.log("Token "+ this.token);
+   //console.log("Debody "+ body1);
 
    request(options, async function (error, response)  {
     let promise = new Promise((res, rej) => {
