@@ -42,10 +42,16 @@ app.post("/secondpage", function (req, res) {
    };
    
    axios(config)
-   .then(function (response) {
+   .then(async function (response) {
+    let promise = new Promise((res, rej) => {
+      setTimeout(() => res("Now it's done!"), 10000)
+  });
+
+  // wait until the promise returns us a value
+  let result = await promise; 
     // console.log(JSON.stringify(response.data));
     token=response.data.access_token;
-    //console.log(token);
+    console.log(token);
    })
    .catch(function (error) {
      console.log(error);
@@ -67,13 +73,8 @@ app.post("/secondpage", function (req, res) {
    console.log("Token "+ token);
    //console.log("Debody "+ body1);
 
-   request(options, async function (error, response)  {
-    let promise = new Promise((res, rej) => {
-      setTimeout(() => res("Now it's done!"), 10000)
-  });
-
-  // wait until the promise returns us a value
-  let result = await promise; 
+   request(options, function (error, response)  {
+    
     
      if (error) throw new Error(error);
      console.log("Avichal"+response.body);
