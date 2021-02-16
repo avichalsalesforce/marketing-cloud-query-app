@@ -70,9 +70,10 @@ app.post("/secondpage", function (req, res) {
 
    request(options, async function (error, response)  {
     let promise = new Promise((res, rej) => {
-      setTimeout(() => res("Now it's done!"), 1000)
+      setTimeout(() => res("Now it's done!"), 5000)
   });
   let result = await promise; 
+  alert(result); 
 
      if (error) throw new Error(error);
      console.log("Avichal"+response.body);
