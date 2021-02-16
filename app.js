@@ -66,8 +66,8 @@ var config1 = {
 };
 
 axios(config1)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
+.then(function (response1) {
+  console.log(JSON.stringify(response1.data));
 })
 .catch(function (error) {
   console.log("Avichal "+error);
