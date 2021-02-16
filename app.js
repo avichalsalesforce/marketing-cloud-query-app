@@ -70,7 +70,7 @@ axios(config1)
   console.log(JSON.stringify(response.data));
 })
 .catch(function (error) {
- // console.log(error);
+  console.log("Avichal "+error);
 });
 
    /*var request = require('request');
