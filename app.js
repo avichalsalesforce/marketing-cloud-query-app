@@ -7,6 +7,8 @@ var HTTP = require("http");
 const axios = require('axios');
 var token;
 var request = require('request');
+const xml2js = require('xml2js');
+var xml;
 
 // use the express-static middleware
 app.use(express.static("marketing-cloud-query-app"));
@@ -79,12 +81,31 @@ let result = await promise;
     
     
      if (error) throw new Error(error);
+     xml=response.body;
      console.log("Avichal"+response.body);
    });
+
+   xml2js.parseString(xml, (err, result) => {
+    if(err) {
+        throw err;
+    }
+
+    // result is a JavaScript object
+    // convert it to a JSON string
+    const json = JSON.stringify(result, null, 4);
+
+    // log JSON string
+    console.log(json);
+    
+});
    
   
   
    }
+
+
+
+
   
   
    fun1();
