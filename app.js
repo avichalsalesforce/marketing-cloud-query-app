@@ -68,13 +68,8 @@ app.post("/secondpage", function (req, res) {
    };
    console.log("Debody"+ body1);
 
-   request(options, async function (error, response)  {
-    let promise = new Promise((res, rej) => {
-      setTimeout(() => res("Now it's done!"), 5000)
-  });
-  let result = await promise; 
-  alert(result); 
-
+   request(options, function (error, response)  {
+    
      if (error) throw new Error(error);
      console.log("Avichal"+response.body);
    });
