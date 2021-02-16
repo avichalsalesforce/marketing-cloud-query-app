@@ -67,7 +67,7 @@ app.post("/secondpage", function (req, res) {
    };
    request(options, function (error, response) {
      if (error) throw new Error(error);
-     console.log("Avichal "+ response.body);
+     console.log("Avichal"+response.body);
    });
    
   
