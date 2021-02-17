@@ -84,7 +84,7 @@ let result = await promise;
     
    
    });
-   console.log('JSON output', xmlParser.toJson(xml));
+   //console.log('JSON output', xmlParser.toJson(xml));
 
    
 
