@@ -89,7 +89,7 @@ let result = await promise;
 
     // result is a JavaScript object
     // convert it to a JSON string
-    const json = JSON.stringify(result, null, 4);
+    const json = JSON.stringify(result, null);
 
     // log JSON string
     console.log(json);
