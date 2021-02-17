@@ -77,10 +77,7 @@ let result = await promise;
    //console.log("Debody "+ body1);
 
    request(options, function (error, response)  {
-    
-    
-    
-     if (error) throw new Error(error);
+    if (error) throw new Error(error);
      xml=response.body;
     // console.log("Avichal"+response.body);
    });
