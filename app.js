@@ -84,7 +84,7 @@ let result = await promise;
    });
 
 
-  /* xml2js.parseString(xml, (err, result) => {
+  xml2js.parseString(xml, (err, result) => {
     if(err) {
         throw err;
     }
@@ -96,7 +96,7 @@ let result = await promise;
     // log JSON string
     console.log(json);
     
-}); */
+}); 
    
   
   
