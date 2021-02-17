@@ -73,8 +73,8 @@ let result = await promise;
      body:body1 
     
    };
-   console.log("Token "+ token);
-   console.log("Debody "+ body1);
+   //console.log("Token "+ token);
+   //console.log("Debody "+ body1);
 
    request(options, function (error, response)  {
     
@@ -82,7 +82,7 @@ let result = await promise;
     
      if (error) throw new Error(error);
      xml=response.body;
-     console.log("Avichal"+response.body);
+    // console.log("Avichal"+response.body);
    });
 
    xml2js.parseString(xml, (err, result) => {
