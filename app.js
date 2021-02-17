@@ -3,12 +3,12 @@ const express = require("express");
 const app = express();
 const bodyParser=require('body-parser');
 const path = require('path');
-var HTTP = require("http");
 const axios = require('axios');
 var token;
 var request = require('request');
 const xmlParser = require('xml2json');
 var xml;
+var jsonRes;
 
 // use the express-static middleware
 app.use(express.static("marketing-cloud-query-app"));
@@ -79,8 +79,10 @@ let result = await promise;
    request(options, function (error, response)  {
     if (error) throw new Error(error);
      xml=response.body;
+     jsonRes=xmlParser.toJson(xml);
     //console.log("Avichal"+response.body);
-    console.log('JSON output', xmlParser.toJson(xml));
+    
+    console.log('JSON output', jsonRes);
     });
     
   
