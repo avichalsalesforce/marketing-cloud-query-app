@@ -8,7 +8,7 @@ const axios = require('axios');
 var token;
 var request = require('request');
 const xml2js = require('xml2js');
-let xmlParser = require('xml2json');
+//let xmlParser = require('xml2json');
 var xml;
 
 // use the express-static middleware
