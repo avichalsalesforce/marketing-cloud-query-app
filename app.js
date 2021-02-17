@@ -81,8 +81,7 @@ let result = await promise;
      xml=response.body;
     //console.log("Avichal"+response.body);
     });
-    var json = xmlParser.toJson(xml);
-    console.log("JSON Avichal ", json);
+    console.log('JSON output', xmlParser.toJson(xml));
   
 
    
