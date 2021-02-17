@@ -84,19 +84,9 @@ let result = await promise;
    });
 
 
-  xml2js.parseString(xml, (err, result) => {
-    if(err) {
-        throw err;
-    }
-
-    // result is a JavaScript object
-    // convert it to a JSON string
-    const json = JSON.stringify(result, null, 4);
-
-    // log JSON string
-    console.log(json);
-    
-}); 
+   xml2js.parseString(xml, function (err, result) {
+    console.log(result); // Output: Hello world!
+});
    
   
   
