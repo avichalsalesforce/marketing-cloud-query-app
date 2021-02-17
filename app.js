@@ -7,7 +7,7 @@ var HTTP = require("http");
 const axios = require('axios');
 var token;
 var request = require('request');
-const xmlParser = require('xml2json');
+// const xmlParser = require('xml2json');
 var xml;
 
 // use the express-static middleware
