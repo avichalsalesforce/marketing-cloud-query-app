@@ -79,10 +79,10 @@ let result = await promise;
    request(options, function (error, response)  {
     if (error) throw new Error(error);
      xml=response.body;
-    // console.log("Avichal"+response.body);
+    console.log("Avichal"+response.body);
    });
 
-   xml2js.parseString(xml, (err, result) => {
+  /* xml2js.parseString(xml, (err, result) => {
     if(err) {
         throw err;
     }
@@ -94,7 +94,7 @@ let result = await promise;
     // log JSON string
     console.log(json);
     
-});
+}); */
    
   
   
