@@ -81,12 +81,13 @@ let result = await promise;
     if (error) throw new Error(error);
      xml=response.body;
     // console.log("Avichal"+response.body);
+    xml2js.parseString(xml, function (err, result) {
+      console.log(result); 
+  });
    });
 
 
-   xml2js.parseString(xml, function (err, result) {
-    console.log(result); 
-});
+   
    
   
   
