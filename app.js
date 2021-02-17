@@ -8,7 +8,7 @@ const axios = require('axios');
 var token;
 var request = require('request');
 const xml2js = require('xml2js');
-var convert = require('xml-js');
+let xmlParser = require('xml2json');
 var xml;
 
 // use the express-static middleware
@@ -81,13 +81,12 @@ let result = await promise;
     if (error) throw new Error(error);
      xml=response.body;
     // console.log("Avichal"+response.body);
-    xml2js.parseString(xml, function (err, result) {
-      console.log(result); 
-  });
+   
    });
 
 
-   
+   console.log('JSON output', xmlParser.toJson(xml));
+});
    
   
   
