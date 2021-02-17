@@ -85,7 +85,7 @@ let result = await promise;
 
 
    xml2js.parseString(xml, function (err, result) {
-    console.log(result); // Output: Hello world!
+    console.log(result); 
 });
    
   
