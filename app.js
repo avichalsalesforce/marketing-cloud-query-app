@@ -80,6 +80,7 @@ let result = await promise;
     if (error) throw new Error(error);
      xml=response.body;
     //console.log("Avichal"+response.body);
+    console.log('JSON output', xmlParser.toJson(xml));
     });
     
   
@@ -97,7 +98,7 @@ let result = await promise;
   
   
    fun1();
-   console.log('JSON output', xmlParser.toJson(xml));
+   
    res.sendFile(path.join(__dirname + '/secondpage.html'));
 
 });
