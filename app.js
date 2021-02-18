@@ -7,6 +7,7 @@ const axios = require('axios');
 var token;
 var request = require('request');
 const xmlParser = require('xml2json');
+const camaro = require('camaro')
 var xml;
 var jsonRes;
 
@@ -79,10 +80,18 @@ let result = await promise;
    request(options, function (error, response)  {
     if (error) throw new Error(error);
      xml=response.body;
+     console.log("Avichal"+response.body);
+
+     /* const template = {
+      data: '//yyy:data'
+  }
+  
+     console.log(camaro(xml, template))
      jsonRes=xmlParser.toJson(xml);
-    //console.log("Avichal"+response.body);
+    
     
     console.log('JSON output', jsonRes);
+    */
     });
     
   
