@@ -85,12 +85,12 @@ let result = await promise;
      //console.log("yeh hai de ki response ki json body" +SourceListDEResult);
      SourceListDEResult = JSON.parse(SourceListDEResult);
      var ResultList  = SourceListDEResult.soapEnvelope.soapBody.RetrieveResponseMsg.Results;
-        console.log("yeh hai result list " + JSON.stringify(ResultList)); 
+        //console.log("Result list " + JSON.stringify(ResultList)); 
         var targetDEArray = [];
         ResultListMap = {};
         for (var key in ResultList) 
        {
-        console.log("yeh hai target data extension" + ResultList[key].Name)   
+        console.log("Data Extension " + ResultList[key].Name)   
          targetDEArray.push(ResultList[key].Name);
          ResultListMap[ResultList[key].Name] = ResultList[key] ; 
        }
