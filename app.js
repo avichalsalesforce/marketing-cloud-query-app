@@ -79,7 +79,8 @@ let result = await promise;
    request(options, function (error, response)  {
     if (error) throw new Error(error);
      xml=response.body;
-     jsonRes=xmlParser.toJson(xml);
+     var rep=xml.replace(":", "");
+     jsonRes=xmlParser.toJson(rep);
     //console.log("Avichal"+response.body);
     
     console.log('JSON output', jsonRes);
