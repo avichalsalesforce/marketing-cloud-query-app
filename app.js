@@ -9,6 +9,7 @@ var request = require('request');
 const xmlParser = require('xml2json');
 var xml;
 var jsonRes;
+var SourceListDEResult;
 
 // use the express-static middleware
 app.use(express.static("marketing-cloud-query-app"));
@@ -79,10 +80,13 @@ let result = await promise;
    request(options, function (error, response)  {
     if (error) throw new Error(error);
      xml=response.body;
-     jsonRes=xmlParser.toJson(xml);
+     SourceListDEResult = xml.replace(/:/g, "");
+     SourceListDEResult = xmlParser.toJson(SourceListDEResult);
+     console.log("yeh hai de ki response ki json body" +SourceListDEResult);
+     //jsonRes=xmlParser.toJson(xml);
     //console.log("Avichal"+response.body);
     
-    console.log('JSON output', jsonRes);
+    //console.log('JSON output', jsonRes);
     });
     
   
