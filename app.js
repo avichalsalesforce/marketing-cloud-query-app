@@ -8,8 +8,8 @@ var token;
 var request = require('request');
 const xmlParser = require('xml2json');
 var xml;
-var jsonRes;
 var SourceListDEResult;
+var name;
 
 // use the express-static middleware
 app.use(express.static("marketing-cloud-query-app"));
@@ -57,6 +57,7 @@ app.post("/secondpage", function (req, res) {
   
 
    async function fun1(){
+    name = 'hello';
      let promise = new Promise((res, rej) => {
     setTimeout(() => res("Now it's done!"), 10000)
 });
@@ -112,7 +113,7 @@ let result = await promise;
   
   
    fun1();
-   var name = 'hello';
+   
 
    
    res.sendFile(path.join(__dirname + '/secondpage.html', {name:name}));
