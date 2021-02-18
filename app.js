@@ -112,8 +112,10 @@ let result = await promise;
   
   
    fun1();
+   var name = 'hello';
+
    
-   res.sendFile(path.join(__dirname + '/secondpage.html'));
+   res.sendFile(path.join(__dirname + '/secondpage.html', {name:name}));
 
 });
 
